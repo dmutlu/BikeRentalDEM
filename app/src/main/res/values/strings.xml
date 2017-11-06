@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Bike Rental DEM</string>
+    <string name="content_description">Bikes</string>
+    <string name="rental_URL">https://recreation.umbc.edu/fitness-wellness/retriever-fleet-bike-share/</string>
 </resources>

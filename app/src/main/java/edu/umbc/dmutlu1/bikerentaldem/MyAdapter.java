@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
-    private ArrayList<DataModel> dataSet;
+    private ArrayList<Bike> dataSet;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -18,7 +18,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         TextView mTextView;
-        TextView textViewVersion;
         ImageView imageViewIcon;
 
         public ViewHolder(View v) {
@@ -30,7 +29,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(ArrayList<DataModel> myDataset) {
+    public MyAdapter(ArrayList<Bike> myDataset) {
         dataSet = myDataset;
     }
 
