@@ -1,5 +1,6 @@
 package edu.umbc.dmutlu1.bikerentaldem;
 
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private ArrayList<Bike> dataSet;
+    private LinkHandler handler;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -19,18 +21,21 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         // each data item is just a string in this case
         TextView mTextView;
         ImageView imageViewIcon;
+        FloatingActionButton mFAB;
 
         public ViewHolder(View v) {
             super(v);
 
             this.mTextView = itemView.findViewById(R.id.textViewName);
             this.imageViewIcon = itemView.findViewById(R.id.imageView);
+            this.mFAB = itemView.findViewById(R.id.floatingActionButton);
         }
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(ArrayList<Bike> myDataset) {
+    public MyAdapter(ArrayList<Bike> myDataset, LinkHandler handler) {
         dataSet = myDataset;
+        this.handler = handler;
     }
 
     // Create new views (invoked by the layout manager)
@@ -52,10 +57,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-
         holder.mTextView.setText(dataSet.get(position).getName());
         holder.imageViewIcon.setImageResource(dataSet.get(position).getImage());
 
+        holder.mFAB.setOnClickListener(view -> handler.openLink());
     }
 
     // Return the size of your dataset (invoked by the layout manager)
