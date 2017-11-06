@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity implements LinkHandler
         for (int i = 0; i < BikeData.bikes.length; i++) {
             data.add(new Bike(
                     BikeData.bikes[i],
-                    BikeData.id_[i],
                     BikeData.drawableArray[i]
             ));
         }

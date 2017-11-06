@@ -3,14 +3,12 @@ package edu.umbc.dmutlu1.bikerentaldem;
 public class Bike
 {
 
-    private String name;
-    private int id_;
-    private int image;
+    private final String name;
+    private final int image;
 
-    public Bike(String name, int id_, int image) {
+    public Bike(String name, int image) {
         this.name = name;
         this.image=image;
-        this.id_ = id_;
     }
 
     public String getName() {
@@ -19,9 +17,5 @@ public class Bike
 
     public int getImage() {
         return image;
-    }
-
-    public int getId() {
-        return id_;
     }
 }

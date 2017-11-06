@@ -11,17 +11,17 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
-    private ArrayList<Bike> dataSet;
-    private LinkHandler handler;
+    private final ArrayList<Bike> dataSet;
+    private final LinkHandler handler;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
-        TextView mTextView;
-        ImageView imageViewIcon;
-        FloatingActionButton mFAB;
+        final TextView mTextView;
+        final ImageView imageViewIcon;
+        final FloatingActionButton mFAB;
 
         public ViewHolder(View v) {
             super(v);
@@ -48,8 +48,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         // set the view's size, margins, paddings and layout parameters
 
-        ViewHolder vh = new ViewHolder(v);
-        return vh;
+        return new ViewHolder(v);
     }
 
     // Replace the contents of a view (invoked by the layout manager)
